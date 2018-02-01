@@ -12,23 +12,25 @@ class TestViewController: UIViewController {
     // MARK: - Subtypes
     typealias CompletionHandler = ((TestEnum) -> Void)
 
+    enum TestEnum {
+        // 5 lines
+    }
+    
+    struct TestStruct {
+        // 3 lines
+    }    
+    
     class TestClass {
         // 10 lines
     }
 
-    struct TestStruct {
-        // 3 lines
-    }
-
-    enum TestEnum {
-        // 5 lines
-    }
-
     // MARK: - Properties
+    
     var shouldLayoutView1: Bool!
     private var hasLayoutedView1 = false
     private var hasLayoutedView2 = false
 
+    // MARK: IBOutlets
     @IBOutlet private var view1: UIView!
     @IBOutlet private var view2: UIView!
 
@@ -41,7 +43,9 @@ class TestViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
 
-    // MARK: - Methods: Life-Cycle
+    // MARK: - Methods
+    
+    // MARK: Life-Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -85,17 +89,10 @@ class TestViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension TestViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
-    }
-}
-
-// MARK: - SomeDesparetelyNeededSubtypeThatCannotBeOutsourced
-extension TestViewController {
-    class SomeDesparetelyNeededSubtypeThatCannotBeOutsourced {
-        // 100 lines
     }
 }
