@@ -80,6 +80,17 @@ class TestViewController: UIViewController {
 
     // MARK: Helpers
     private func getRandomVc() -> UIViewController { return UIViewController() }
+    
+    // MARK: - Subscripts
+    subscript(_ someIndexThatIsNotEvenUsed: Int) -> String {
+        get {
+            return "This is just a test"
+        }
+        
+        set {
+            print("Just a test", newValue)
+        }
+    }
 }
 
 // MARK: - UITableViewDataSource
